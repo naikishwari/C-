@@ -1,0 +1,339 @@
+Sum of matrix
+----------------------------------------------------
+using System;  
+public class Exercise19  
+{  
+    public static void Main() 
+{
+        int i,j,n;
+    	int[,] arr1 = new int[50,50];
+		int[,] brr1 = new int[50,50];
+		int[,] crr1 = new int[50,50];
+  
+       Console.Write("\n\naddition of two Matrices :\n");
+       Console.Write("-----------------------------------------\n");  
+        Console.Write("Input the size of the square matrix (less than 5): ");
+	   n = Convert.ToInt32(Console.ReadLine());	   
+  
+    /* Stored values into the array*/
+       Console.Write("Input elements in the first matrix :\n");
+       for(i=0;i<n;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+	           Console.Write("element - [{0},{1}] : ",i,j);
+			   arr1[i,j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }   
+  
+       Console.Write("Input elements in the second matrix :\n");
+       for(i=0;i<n;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+	           Console.Write("element - [{0},{1}] : ",i,j);
+		       brr1[i,j] = Convert.ToInt32(Console.ReadLine());			   
+            }
+        }    
+   Console.Write("\nThe First matrix is :\n");
+  for(i=0;i<n;i++)
+    {
+      Console.Write("\n");
+      for(j=0;j<n;j++)
+           Console.Write("{0}\t",arr1[i,j]);
+    }
+  
+  Console.Write("\nThe Second matrix is :\n");
+  for(i=0;i<n;i++)
+    {
+      Console.Write("\n");
+      for(j=0;j<n;j++)
+      Console.Write("{0}\t",brr1[i,j]);
+    }
+/* calculate the sum of the matrix */   
+   for(i=0;i<n;i++)
+       for(j=0;j<n;j++)
+            crr1[i,j]=arr1[i,j]+brr1[i,j];
+   Console.Write("\nThe Addition of two matrix is : \n");
+   for(i=0;i<n;i++){
+       Console.Write("\n");
+       for(j=0;j<n;j++)
+            Console.Write("{0}\t",crr1[i,j]);
+   }
+   Console.Write("\n\n");
+  }
+--------------------------------------------
+transpose of matrix
+
+using System;
+public class Demo {
+   public static void Main() {
+      int i, j, m, n;
+      int[, ] arr1 = new int[30, 30];
+      int[, ] arr2 = new int[30, 30];
+
+      Console.Write("\nEnter the number of rows and columns of the matrix :\n");
+      Console.Write("Rows entered = ");
+      m = Convert.ToInt32(Console.ReadLine());
+
+      Console.Write("Columns entered = ");
+      n = Convert.ToInt32(Console.ReadLine());
+
+      Console.Write("Set elements in the matrix...\n");
+      for (i = 0; i < m; i++) {
+         for (j = 0; j < n; j++) {
+            Console.Write("\n [{0}],[{1}] : ", i, j);
+            arr1[i, j] = Convert.ToInt32(Console.ReadLine());
+         }
+      }
+
+      Console.Write("\n\nMatrix before Transpose:\n");
+      for (i = 0; i < m; i++) {
+         Console.Write("\n");
+         for (j = 0; j < n; j++)
+         Console.Write("{0}\t", arr1[i, j]);
+      }
+
+      for (i = 0; i < m; i++) {
+         for (j = 0; j < n; j++) {
+
+            arr2[j, i] = arr1[i, j];
+         }
+      }
+
+      Console.Write("\n\nMatrix after Transpose: ");
+      for (i = 0; i < m; i++) {
+         Console.Write("\n");
+         for (j = 0; j < n; j++) {
+            Console.Write("{0}\t", arr2[i, j]);
+         }
+      }
+      Console.Write("\n\n");
+   }
+}
+--------------------------------------------------------------
+identity matrix
+Console.WriteLine("Enter the order: ");
+        int n = int.Parse(Console.ReadLine());
+        int[,] a = new int[3, 3];
+        int i, j;
+        Console.WriteLine("\n Enter the matrix\n");
+        for (i = 0; i < n; i++)
+        {
+            for (j = 0; j < n; j++)
+            {
+                a[i, j] = Convert.ToInt16(Console.ReadLine());
+            }
+        }
+ 
+        for (i = 0; i < n; i++)
+        {
+            for (j = 0; j < n; j++)
+            {
+                if ((i == j && a[i, j] != 1) || (i != j && a[i, j] != 0))
+                {
+                    Console.WriteLine("\n Not an Identity Matrix");
+                }
+            }              
+        }
+    Console.WriteLine("Identity Matrix");
+   
+
+    
+    }
+}
+----------------------------------
+var keyword
+using System;  
+public class Exercise19  
+{  
+    public static void Main() 
+{
+       
+	   
+		   var i=2;
+		   i="vikas";
+		   Console.WriteLine(i);
+		   Console.ReadLine();
+	   
+	}
+}
+-------------------------------
+dynamic keyword
+using System;  
+public class Exercise19  
+{  
+    public static void Main() 
+{
+       
+	   
+		   dynamic i=2;
+		   i="vikas";
+		   Console.WriteLine(i);
+		   Console.ReadLine();
+	   
+	}
+}
+----------------------------------------
+function example
+
+using System;  
+public class Exercise19  
+{  
+    public static void Main() 
+{
+		
+		Console.Write("Enter value for a ");
+		int a= Convert.ToInt32(Console.ReadLine());
+		Console.Write("Enter value for b ");
+		int b= Convert.ToInt32(Console.ReadLine());
+		Console.Write("Enter choise form 1 2 3 ");
+		int m = Convert.ToInt32(Console.ReadLine());
+		
+		if(m==1)
+		{
+			int d= sub(a,b);
+		Console.WriteLine("sub of number is"+d);
+		Console.ReadLine();	
+		}
+		if(m==2)
+		{
+		int c = sum(a,b);
+		Console.WriteLine("sum of number"+c);
+		Console.ReadLine();	
+		}
+		if(m==3)
+		{
+		int e = mul(a,b);
+		Console.WriteLine("mul of number is"+e);
+		Console.ReadLine();	
+		}
+		
+	}   
+
+	public static int sum(int a, int b)
+	{
+		return (a+b);
+		
+	}
+	public static int sub(int a, int b)
+	{
+		return (a-b);
+		
+	}
+	public static int mul(int a, int b)
+	{
+		return (a*b);
+		
+	}
+	
+	
+}
+-----------------------------------------------------
+swap number
+using System;
+public class Exercise5
+{
+       public static void Main(string[] args)
+         {
+            int number1, number2, temp;
+            Console.Write("\nInput the First Number : ");
+            number1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nInput the Second Number : ");
+            number2 = Convert.ToInt32(Console.ReadLine());
+            temp = number1;
+            number1 = number2;
+            number2 = temp;
+            Console.Write("\nAfter Swapping : ");
+            Console.Write("\nFirst Number : "+number1);
+            Console.Write("\nSecond Number : "+number2);
+            Console.ReadLine();
+        }
+}
+------------------------------using System;
+public class Exercise5
+{
+       public static void Main(string[] args)
+         {
+            int number1=5, number2=10;
+		   swap(ref number1,ref number2);
+           Console.WriteLine("befor Swapping : ");
+            Console.WriteLine("First Number : "+number1);
+            Console.WriteLine("Second Number : "+number2);
+            Console.ReadLine();
+		   
+	   }
+	public static void swap(ref int number1,ref int number2)
+	{
+		    int temp = number1;
+            number1 = number2;
+            number2 = temp;
+	
+            
+            Console.WriteLine("After Swapping : ");
+            Console.WriteLine("First Number : "+number1);
+            Console.WriteLine("Second Number : "+number2);
+           
+        }
+}
+----------------------------------------------
+using System;
+public class Exercise5
+{
+       public static void Main(string[] args)
+         {
+		   int a=5,b=8;
+		   Sum(a,b);
+	   }
+	public static void Sum(int a, int b=7)
+	{
+		Console.WriteLine(a+b);
+	}
+}
+----------------------------------------------------------
+out
+using System;
+public class Exercise5
+{
+       public static void Main(string[] args)
+	   {
+          
+		   int a=5,b=10 ;
+		   int c;
+		   
+		   Sum(a,b,out c);
+		   Console.WriteLine("the sum is"+c);
+		   
+	   }
+	public static void Sum(int a, int b,out int c)
+	{
+		c=a+b;
+	}
+}
+--------------------------------------
+palindrome
+using System;
+public class Exercise5
+{
+       public static void Main(string[] args)
+         {
+            string s,revs="";  
+            Console.WriteLine(" Enter string");  
+            s = Console.ReadLine(); 
+		   for (int i = s.Length-1; i >=0; i--)  
+            {  
+                revs += s[i].ToString();  
+            }  
+            if (revs == s)  
+            {  
+                Console.WriteLine("String is Palindrome");  
+            }  
+            else  
+            {  
+                Console.WriteLine("String is not Palindrome ");  
+            }  
+		   
+		   
+        
+}
+}
