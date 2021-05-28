@@ -331,9 +331,140 @@ public class Exercise5
             else  
             {  
                 Console.WriteLine("String is not Palindrome ");  
-            }  
-		   
-		   
-        
+            }
 }
 }
+------------------------------------------------------------
+count vowels
+
+using System;  
+public class Exercise9  
+{  
+    public static void Main() 
+{
+    string str;
+    int i, vowel;
+	
+       	
+      Console.Write("Input the string : ");
+      str = Console.ReadLine();		
+
+    vowel = 0;
+
+    for(i=0; i<str.Length; i++)
+    {
+
+        if(str[i] =='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u' || str[i]=='A' || str[i]=='E' || str[i]=='I' || str[i]=='O' || str[i]=='U')
+        {
+            vowel++;
+        }
+    }
+   Console.WriteLine(vowel);
+		Console.ReadLine();
+	}
+}
+----------------------------------------------------------
+make first letter of word capital in c#
+using System;
+public class Exercise5
+{
+       public static void Main(string[] args)
+         {
+            string sample = "i love my india";
+char[] arr = sample.ToCharArray();
+for (int i = 0; i < sample.Length; i++)
+{
+if(i==0)
+{
+arr[i] = Convert.ToChar(sample[i].ToString().ToUpper());
+}
+else
+{
+if(sample[i]==' ')
+{
+arr[i+1] = Convert.ToChar(sample[i+1].ToString().ToUpper());
+}
+}
+}
+string output = new string(arr);
+Console.WriteLine("Input String is : " + sample);
+Console.WriteLine("Output String is : "+ output);
+Console.ReadLine();
+        }
+}
+--------------------------------------------------------------
+using System;
+public class Exercise5
+{
+       public static void Main(string[] args)
+         {
+            string sample = "i love my india";
+
+ string []sample1 = sample.Split(' ');
+string sample2=string.Empty;
+for (int i = 0; i < sample1.Length; i++)
+{
+if (sample1[i].Length > 1)
+{
+
+ sample2 = sample2 + " " + sample1[i].Substring(0, 1).ToUpper() + sample1[i].Substring(1, sample1[i].Length-1);
+}
+else
+{
+sample2 = sample2 + sample1[i].ToUpper();
+}
+}
+	   }
+}
+-----------------------------------------------------------------------
+longest palindrome  substring
+using System;
+public class Exercise5
+{
+       public static void Main(string[] args)
+         {Console.WriteLine("aaaaaabbbccc");
+Console.WriteLine(LongestPalindrome("aaaaaabbbccc"));
+Console.ReadLine();
+}
+
+ public static string LongestPalindrome(String s)
+{
+var charaaray = s.ToCharArray();
+var bool_arr = new bool[charaaray.Length, charaaray.Length];
+int longest_start = 0;
+int max_length = 1;
+for (int i = 0; i < charaaray.Length; i++)
+{
+bool_arr[i, i] = true;
+}
+for (int i = 0; i < charaaray.Length-1; i++)
+{
+if(charaaray[i]== charaaray[i + 1])
+{
+bool_arr[i, i + 1] = true;
+longest_start = i;
+max_length = 2;
+}
+}
+for (int length = 3; length <= charaaray.Length; length++)
+{
+for (int i = 0; i < charaaray.Length-length+1; i++)
+{
+int j = i + length - 1;
+if(charaaray[i] == charaaray[j] && bool_arr[i+1,j-1])
+{
+bool_arr[i, j] = true;
+if (max_length < (j - i))
+{
+max_length = j - i;
+longest_start = i;
+}
+}
+}
+}
+
+ return s.Substring(longest_start,max_length);
+}
+}
+----------------------------------------------------------------
+           
