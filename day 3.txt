@@ -1,0 +1,381 @@
+student details
+----------------------------------------------------------------------------------------
+using System;
+					
+namespace Day_3
+{
+	class Student
+	{
+		public int StudentRollno;
+		public string StudentName;
+	}
+
+public class Program
+{
+	public static void Main()
+	{
+		Student student=new Student();
+		Console.WriteLine("Enter student Roll no");
+		student.StudentRollno = Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine("Please enter Employee Name");
+		student.StudentName=Console.ReadLine();
+		Console.WriteLine("student details are");
+		Console.WriteLine("Student roll :"+student.StudentRollno);
+		Console.WriteLine("Student name :"+student.StudentName);
+	    Console.ReadLine();
+	}
+	
+}
+}
+------------------------------------------------------------------------
+students details using method
+using System;
+					
+namespace Day_3
+{
+	
+	class Student
+	{
+		public int StudentRollno;
+		public string StudentName;
+	
+	public void Getstudentdetails()
+	{
+		Console.WriteLine("Enter student Roll no");
+		StudentRollno = Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine("Please enter Employee Name");
+		StudentName=Console.ReadLine();
+		
+	}
+	public void PrintStudentdetails()
+	{
+		Console.WriteLine("student details are");
+		Console.WriteLine("Student roll :"+StudentRollno);
+		Console.WriteLine("Student name :"+StudentName);
+	    Console.ReadLine();
+	}
+	}
+
+public class Program
+{
+	public static void Main()
+	{
+		Student student=new Student();
+		student.Getstudentdetails();
+		student.PrintStudentdetails();
+		
+	}
+	
+}
+}
+------------------------------------------------------------------
+Declaring copy constructor and parametrised constructor
+using System;
+					
+namespace Day_3
+{
+	
+	class Student
+	{
+		public int StudentRollno;
+		public string StudentName;
+	
+		public Student(Student std) //Declaring copy constructor
+		{
+			StudentRollno=std.StudentRollno;
+			StudentName=std.StudentName;
+		}
+		public Student(int StudentRollno,string StudentName) //parametrised constructor
+		{
+			this.StudentRollno=StudentRollno;
+			this.StudentName=StudentName;
+		}
+public void PrintStudentdetails()
+	{
+		Console.WriteLine("student details are");
+		Console.WriteLine("Student roll :"+StudentRollno);
+		Console.WriteLine("Student name :"+StudentName);
+	    
+	}
+	}
+
+public class Program
+{
+	public static void Main()
+	{
+		Student std1=new Student(10,"ishwari");
+		Student std2=new Student(std1);
+		std2.PrintStudentdetails();
+		Console.ReadLine();
+		
+	}
+	
+}
+}
+------------------------------------------------------------------------------------------------------------
+using System;
+					
+namespace Day_3
+{
+	
+	public class Animal
+	{
+		public void eat()
+		{
+			Console.WriteLine("Dog can eat");
+		}
+	
+	}
+		public class Dog: Animal
+		{
+			public void bark()
+			{
+			Console.WriteLine("Dog can bark");
+			}
+			public static void Main()
+				{
+					Dog dg=new Dog ();
+		 			dg.eat();
+					dg.bark();
+					Console.ReadLine();
+		
+				}
+			
+			}
+		
+	}
+------------------------------------------------------------------------------------------------------------------
+using System;
+					
+namespace Day_3
+{
+	
+	public class shape
+	{
+		public void length()
+		{
+			Console.WriteLine("Area of shape");
+
+		}
+	
+	}
+		public class rectangle: shape
+		{
+			public void area()
+			{
+			Console.WriteLine("Enter the value");
+			int length=Convert.ToInt32(Console.ReadLine());
+			int breadth=Convert.ToInt32(Console.ReadLine());
+			Console.WriteLine("Area of rectangle is ");
+			int Area=length * breadth;
+			Console.WriteLine(Area);
+			Console.ReadLine();
+			}
+		}
+		
+	public class square: rectangle 
+		{
+			public void area1()
+			{
+			
+			Console.WriteLine("Enter the value");
+			int side =Convert.ToInt32(Console.ReadLine());
+			Console.WriteLine("Area of square is ");
+			int Area1=4*side;
+			Console.WriteLine(Area1);
+			Console.ReadLine();
+			}
+			public static void Main()
+				{
+					square rt = new square  ();
+				
+					rt.length();
+		 			rt.area();
+					rt.area1();
+					Console.ReadLine();
+		
+				}
+			
+			}
+		
+	}
+
+--------------------------------------------------------------------------
+using System;
+					
+
+	
+	public abstract class wholeseller
+	{ 
+		
+		public abstract void discount();
+	}
+		
+	
+	
+		 public class retail: wholeseller
+		{
+		int price=0;
+		public void Price()
+		{
+			Console.WriteLine("Enter the price of product ");
+			 price= Convert.ToInt32(Console.ReadLine());
+
+		}
+			public override void discount()
+			{
+			Console.WriteLine("Enter the discount ");
+			int dis= Convert.ToInt32(Console.ReadLine());
+			int final = price-dis;
+			Console.WriteLine(final);
+			
+			}
+		}
+		
+	
+			
+			
+			public class Class8
+			{
+			public static void  Main()
+				{
+					retail rt = new retail  ();
+				
+					rt.discount();
+		 			rt.Price();
+				   
+					Console.ReadLine();
+				
+		
+				}
+			}
+			
+		
+
+
+----------------------------------------------------------------
+Age of student
+
+using System;
+					
+
+	
+public class Person
+{
+    public int age;
+ 
+    public void Greet()
+    {
+        Console.WriteLine("Hello!");
+    }
+ 
+    public void SetAge(int n)
+    {
+        Console.WriteLine("enter the age");
+		
+		age = Convert.ToInt32(Console.ReadLine());
+    }
+}
+ 
+public class Student : Person
+{
+    public void Study() 
+    {
+        Console.WriteLine("I'm studying");
+    }
+ }	
+	public class student:Person
+	{
+		public void study()
+		{
+			Console.WriteLine("I'm studying on the screen ");
+		}
+		public void showage()
+		{
+			
+			Console.WriteLine("My age is {0} years old", age);
+		}
+	}
+		
+	public class teacher:Person
+	{
+ 		public void explain()
+		{
+		Console.WriteLine(" I'm explaining on the screen. ");
+		}
+	}
+	
+			
+			
+	public class StudentAndTeacherTest
+			{
+			public static void  Main()
+				{
+					
+					teacher tch = new teacher ();
+					student std = new student();
+				
+					std.Greet();
+		 			std.SetAge(20);
+					std.showage();
+					std.study();
+					tch.Greet();
+					tch.SetAge(40);
+					tch.explain();
+					Console.ReadLine();
+				
+		
+				}
+			}
+			
+-------------------------------------------------------------------------------------------------------------
+photobook code
+
+using System;
+ 
+public class PhotoBook
+{
+    public int numPages;
+ 
+    public PhotoBook()
+    {
+        numPages = 16;
+    }
+ 
+    public PhotoBook(int numPages)
+    {
+        this.numPages = numPages;
+    }
+ 
+    public int GetNumberPages()
+    {
+        return numPages;
+    }
+}
+ 
+public class BigPhotoBook : PhotoBook
+{
+    public BigPhotoBook()
+    {
+        numPages = 64;
+    }
+}
+public class PhotoBookTest
+{
+    public static void Main()
+    {
+        PhotoBook myAlbum1 = new PhotoBook();
+        Console.WriteLine(myAlbum1.GetNumberPages());
+ 
+        PhotoBook myAlbum2 = new PhotoBook(24);
+        Console.WriteLine(myAlbum2.GetNumberPages());
+ 
+        BigPhotoBook myBigPhotoAlbum1 = new BigPhotoBook();
+        Console.WriteLine(myBigPhotoAlbum1.GetNumberPages());
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------
+		
+
+
+	
