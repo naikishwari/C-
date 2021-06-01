@@ -1,4 +1,4 @@
-student details
+1) student details
 ----------------------------------------------------------------------------------------
 using System;
 					
@@ -28,7 +28,7 @@ public class Program
 }
 }
 ------------------------------------------------------------------------
-students details using method
+2) students details using method
 using System;
 					
 namespace Day_3
@@ -69,7 +69,7 @@ public class Program
 }
 }
 ------------------------------------------------------------------
-Declaring copy constructor and parametrised constructor
+3) Declaring copy constructor and parametrised constructor
 using System;
 					
 namespace Day_3
@@ -113,6 +113,7 @@ public class Program
 }
 }
 ------------------------------------------------------------------------------------------------------------
+4)
 using System;
 					
 namespace Day_3
@@ -145,6 +146,7 @@ namespace Day_3
 		
 	}
 ------------------------------------------------------------------------------------------------------------------
+5)
 using System;
 					
 namespace Day_3
@@ -201,6 +203,7 @@ namespace Day_3
 	}
 
 --------------------------------------------------------------------------
+6
 using System;
 					
 
@@ -254,6 +257,7 @@ using System;
 
 
 ----------------------------------------------------------------
+7)
 Age of student
 
 using System;
@@ -329,7 +333,7 @@ public class Student : Person
 			}
 			
 -------------------------------------------------------------------------------------------------------------
-photobook code
+8)  photobook code
 
 using System;
  
@@ -375,7 +379,129 @@ public class PhotoBookTest
     }
 }
 ----------------------------------------------------------------------------------------------------------------------------
-		
+ using System;
+ 
+ public interface IVehicle
+    
+{
+        
+void Drive();
+      
+ bool Refuel(int amount);
+    
+}
+    
+public class Car: IVehicle
+    
+{
+        
+public int Fuel;
+        
+public Car(int Fuel)
+        
+{
+            
+this.Fuel = Fuel;
+        
+}
+        
+public void Drive()
+        
+{
+            
+if (Fuel > 0)
+            
+{
+                
+Console.WriteLine("Driving");
+            
+}
+            
+else
+            
+{
+                
+Console.WriteLine("No Fuel");
+            
+}
+        
+}
+       
+ public bool Refuel(int amount)
+        
+{
+            
+Fuel = Fuel + amount;
+            
+return true;
+        
+}
 
+ 
 
-	
+   
+ }
+    
+class Class11
+    
+{
+        
+public static void Main()
+        
+{
+           
+ Car car=new Car(0);
+            
+int fuel = int.Parse(Console.ReadLine());
+          
+  if(car.Refuel(fuel))
+            
+{
+               
+ car.Drive();
+           
+ }
+            
+Console.ReadLine();
+        
+}
+    
+}
+----------------------------------------------------------------------------------------------
+using System;
+ 
+public class AbstractClass
+{
+    public static void Main(string[] args)
+    {
+        Dog dog = new Dog();
+        dog.SetName(Console.ReadLine());
+        Console.WriteLine(dog.GetName());
+        dog.Eat();
+    }
+ 
+    public class Dog : Animal
+    {
+        public override void Eat()
+        {
+            Console.WriteLine("Eating");
+        }
+    }
+ 
+    public abstract class Animal
+    {
+        private string Name;
+ 
+        public void SetName(string name)
+        {
+            Name = name;
+        }
+ 
+        public string GetName()
+        {
+            return Name;
+        }
+ 
+        public abstract void Eat();
+    }
+}
