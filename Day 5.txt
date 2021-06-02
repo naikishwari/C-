@@ -1,0 +1,234 @@
+using System;
+
+public class student
+{
+
+	public static void Main()
+	{
+		string[] sname = new string[10000];
+		int[] smarks = new int[10000];
+		int[] rollno = new int[10000];
+		int p;
+		char g;
+		for(int i=0;i<5;i++)
+		{
+			Console.WriteLine("enter name of student "+(i+1));
+			sname[i]=Console.ReadLine();
+			Console.WriteLine("enter total marks of student"+(i+1)+" out of 500");
+			smarks[i]=Convert.ToInt32(Console.ReadLine());
+			Console.WriteLine("enter roll no of student "+(i+1));
+			rollno[i]=Convert.ToInt32(Console.ReadLine());
+			
+		}
+			Console.Write("S.No\tRollNo\tName\t\tPercentage\t\tGrades");
+		Console.WriteLine();
+		for(int i=0;i<5;i++)
+		{
+			p=(smarks[i]*100)/500;
+			if(p>=90 &&p<=100)
+				g='A';
+			else if(p>=80&&p<=89)
+				g='B';
+			else if(p>=65&&p<=79)
+				g='C';
+			else if(p>=55&&p<=64)
+				g='D';
+			else if(p>=33&&p<=54)
+				g='E';
+			else
+				g='F';
+			Console.Write((i+1)+"\t\t\t\t"+rollno[i]+"\t\t\t\t"+sname[i]+"\t\t\t\t\t"+p+"\t\t\t"+g);
+		Console.WriteLine();	
+		}
+
+		
+	}	
+		}
+---------------------------------------------------------------------------------------
+using System;
+
+public struct student
+{
+	public string Name;
+	public int Rollno;
+}
+ public class Program
+{
+	public static void Main(string[] args)
+	{
+		student s1;
+		s1.Name="ishwari";
+		s1.Rollno=1;
+		Console.WriteLine("Name:" +s1.Name+"   Rollno:" +s1.Rollno);
+		Console.ReadLine();
+			
+	}
+}
+
+--------------------------------------------------------------------------------------------------------------------
+using System;
+
+public class Calci
+{
+
+	public enum Choise 
+	{
+		Add,Sub,Mul,Div
+	}
+
+ 
+
+	public static void Main(string[] args)
+	{  
+		Console.WriteLine("enter value of number1");
+		int number1 = Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine("enter value of number2");
+		int number2 = Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine("Enter the choise");
+		foreach (var item in Enum.GetValues(typeof(Choise)))
+            {
+                Console.WriteLine(((int)item)+" " +item);
+            }
+
+ 
+
+            int Choice = Convert.ToInt32(Console.ReadLine());
+            switch (Choice)
+            {
+                case (int)Choise.Add:
+                    Console.WriteLine("Addition of two number is  :- {0}" ,(number1 + number2));
+                    break;
+                case (int)Choise.Mul:
+                    Console.WriteLine("Addition of two number is  :- {0}", (number1 * number2));
+                    break;
+                case (int)Choise.Sub:
+                    Console.WriteLine("Addition of two number is  :- {0}", (number1 - number2));
+                    break;
+                case (int)Choise.Div:
+                    Console.WriteLine("Addition of two number is  :- {0}", (number1/number2));
+                    break;
+                default:
+                    Console.WriteLine("Please enter a valid Choice");
+                    break;
+            }
+            Console.ReadLine();
+				 }
+				 }
+---------------------------------------------------------------------------------------
+var arr = Enum.GetValues(typeof(Choiceenum));
+          
+  for (int i = 0;i< arr.Length; i++)
+           
+ {
+               
+ Console.WriteLine(arr.GetValue(i));
+         
+   }
+-------------------------------------------
+ foreach (var item in Enum.GetValues(typeof(Choiceenum)))
+            
+{
+                
+Console.WriteLine(((int)item)+" " +item);
+       
+     }
+        
+    var arr = Enum.GetValues(typeof(Choiceenum));
+       
+     for (int i = 0;i< arr.Length; i++)
+          
+  {
+              
+  Console.WriteLine(arr.GetValue(i));
+      
+      }				 ---------------------------------------------------------------------------
+using System;
+ public struct Student
+{
+	public string name;
+	public int rollno;
+	public string gender;
+}
+	
+public class student
+{
+	public enum Gender
+	{
+		female=0,male=1
+	}
+
+	public static void Main()
+	{
+		Student[] arr = new Student[2];
+		arr[0].name="abc";
+		arr[0].rollno=12;
+		arr[1].name="def";
+		arr[1].rollno=32;
+			int c=0;
+		for(int i=0;i<2;i++)
+		{
+			Console.WriteLine("enter gender for student: "+(i+1));
+			Console.WriteLine("enter \n0.for female\n1.for male");
+			c=Convert.ToInt32(Console.ReadLine());
+			if(c==0)
+			arr[i].gender=Gender.female.ToString();
+			else if(c==1)
+			arr[i].gender=Gender.male.ToString();	
+		}
+		Console.WriteLine("Name:\t\tRollNo\t\tGender");
+		Console.WriteLine();
+		for(int i=0;i<2;i++)
+		{
+			Console.WriteLine(arr[i].name+"\t\t\t"+arr[i].rollno+"\t\t\t"+arr[i].gender);
+			Console.WriteLine();
+			
+		}
+	
+		
+	}	
+
+		}
+--------------------------------------------------------------------------------------------------------------------
+using System;
+public class MyException :Exception
+{
+	public MyException(string message):base(message)
+	{
+	}
+}
+	public class Fitness
+	{
+		int points =10;
+		public void ShowResult()
+		{
+			if(points < 110)
+			{
+				throw new MyException("Player failed the fitness test");
+			}
+			else
+			{
+				Console.WriteLine("Player passes the fitness test");
+			}
+		}
+	}
+public class Class4
+{
+	public static void Main()
+	{
+		Fitness f =new Fitness();
+		try
+		{
+			f.ShowResult();
+		}
+		catch(MyException e)
+		{
+			Console.WriteLine("User defined exceptions:{0}",e.Message);
+		}
+		Console.ReadLine();
+			
+	}
+}
+	
+	
+				 
+			
