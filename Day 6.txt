@@ -1,0 +1,133 @@
+arraylist
+using System;
+using System.Collections;
+					
+public class Program
+{
+	public static void Main()
+	{
+		//1.ArrayList
+            ArrayList arrayList = new ArrayList();
+            arrayList.Add("Vikash");
+            arrayList.Add("Soham");
+            arrayList.Add(1);
+            arrayList.Remove(1);
+            for (int i = 0; i < arrayList.Count; i++)
+            {
+           Console.WriteLine(arrayList[i]);
+            }
+}
+}
+-------------------------------------------------------------------------------------------------------------
+Hashtable
+using System;
+using System.Collections;
+					
+public class Program
+{
+	public static void Main()
+	{
+	Hashtable hashtable = new Hashtable();
+            hashtable.Add(101,"Vikash");
+            hashtable.Add(102, "Raj");
+            hashtable.Add(103, "Sujan Singh");
+            ICollection keys = hashtable.Keys;
+            foreach (var item in keys)
+            {
+                Console.WriteLine(item +":-" + hashtable[item]);
+            }
+}
+}
+------------------------------------------------------------------------------------------------------------------
+Queue
+using System;
+using System.Collections;
+					
+public class Program
+{
+	public static void Main()
+	{
+Queue queue = new Queue();
+            queue.Enqueue("C#");
+            queue.Enqueue("PHP");
+            queue.Enqueue("JAVA");
+            queue.Dequeue();
+            Console.WriteLine(queue.Peek());
+}
+}
+-------------------------------------------------------------------------------------------------------------------------
+Stack
+using System;
+using System.Collections;
+					
+public class Program
+{
+	public static void Main()
+	{
+            Stack stack = new Stack();
+            stack.Push("C#");
+            stack.Push("PHP");
+            stack.Push("JAVA");
+            stack.Pop();
+            Console.WriteLine(stack.Peek());
+}
+}
+---------------------------------------------------------------------------------------
+Dictionary
+using System;
+using System.Collections.Generic;
+					
+public class Program
+{
+	public static void Main()
+	{
+Dictionary<int,string> keyValuePairs = new Dictionary<int,string>();
+		keyValuePairs.Add(1,"Vikash");
+		keyValuePairs.Add(2,"sonham");
+		foreach(var item in keyValuePairs)
+		{
+			Console.WriteLine(item.Key + " "+item.Value);
+		}
+		Console.ReadLine();
+}
+}
+---------------------------------------------------------------------------------------------------
+Dictionary counting number repeted letters
+	
+using System;  
+using System.Collections.Generic;  
+ 
+  
+namespace CountRepeatedWordCount  
+{  
+   public class Program  
+    {  
+       public static void Main(string[] args)  
+        {  
+            string Input = "aabbbbcd";
+            Dictionary<char, int> keyValuePairs = new Dictionary<char, int>();
+
+ 
+
+            foreach (var item in Input)
+            {
+                int counter;
+                keyValuePairs.TryGetValue(item, out counter);
+                if(counter==0)
+                {
+                    keyValuePairs.Add(item, 1);
+                }
+                else
+                {
+                    keyValuePairs.Remove(item);
+                    keyValuePairs.Add(item, counter+1);
+                }
+            }
+            foreach (var item in keyValuePairs)
+            {
+                Console.WriteLine(item.Key+" - "+item.Value);
+            }
+            Console.ReadLine();
+		}
+	}
+}
